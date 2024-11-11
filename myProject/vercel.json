@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "myproject/asgi.py",
+        "use": "@vercel/python",
+        "config": {
+            "maxLambdaSize": "15mb"
+        }
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "myProject/asgi.py"
+    }]
+}
