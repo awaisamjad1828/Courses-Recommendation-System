@@ -11,7 +11,9 @@ SECRET_KEY = env("SECRET_KEY", default="your-secret-key")
 DEBUG = env.bool("DEBUG", default=False)
 # DEBUG = True
 
-ALLOWED_HOSTS = ['https://courses-recommendation-system.vercel.app/']  # Use actual domain names in production
+ALLOWED_HOSTS = ['courses-recommendation-system.vercel.app', '127.0.0.1']
+
+
 # ALLOWED_HOSTS = ['*']  # Use actual domain names in production
 
 INSTALLED_APPS = [
@@ -91,5 +93,6 @@ USE_TZ = True
 # Static files settings for Vercel deployment
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
