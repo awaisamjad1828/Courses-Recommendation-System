@@ -11,8 +11,8 @@ SECRET_KEY = env("SECRET_KEY", default="your-secret-key")
 DEBUG = env.bool("DEBUG", default=False)
 # DEBUG = True
 
-# ALLOWED_HOSTS = ['https://courses-recommendation-system.vercel.app/']  # Use actual domain names in production
-ALLOWED_HOSTS = ['*']  # Use actual domain names in production
+ALLOWED_HOSTS = ['https://courses-recommendation-system.vercel.app/']  # Use actual domain names in production
+# ALLOWED_HOSTS = ['*']  # Use actual domain names in production
 
 INSTALLED_APPS = [
     'django.contrib.admin',
