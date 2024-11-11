@@ -8,8 +8,7 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY", default="your-secret-key")
-DEBUG = True
-
+DEBUG = env.bool("DEBUG", default=False)
 ALLOWED_HOSTS = ['*']  # Use actual domain names in production
 
 INSTALLED_APPS = [
@@ -37,8 +36,7 @@ ROOT_URLCONF = 'myProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'
-        ],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
