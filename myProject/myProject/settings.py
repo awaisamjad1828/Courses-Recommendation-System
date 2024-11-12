@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -6,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'V0W9aFjLtqkvh0xRzL4Q8B2_ndv1OvdchOQgNZD-C8v1-C2Z_NS4kGga8piBaAQyLRo'
 DEBUG = False  # Set to False in production
 
-ALLOWED_HOSTS = ['courses-recommendation-system.vercel.app', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
