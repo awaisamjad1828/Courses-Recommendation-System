@@ -1,20 +1,12 @@
 from pathlib import Path
-import environ
-
-# Initialize environment variables
-env = environ.Env()
-environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = env("SECRET_KEY", default="your-secret-key")
-DEBUG = env.bool("DEBUG", default=False)
-# DEBUG = True
+# Replace environment variable calls with direct values
+SECRET_KEY = 'V0W9aFjLtqkvh0xRzL4Q8B2_ndv1OvdchOQgNZD-C8v1-C2Z_NS4kGga8piBaAQyLRo'
+DEBUG = False  # Set to False in production
 
 ALLOWED_HOSTS = ['courses-recommendation-system.vercel.app', '127.0.0.1']
-
-
-# ALLOWED_HOSTS = ['*']  # Use actual domain names in production
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
@@ -62,7 +54,7 @@ WSGI_APPLICATION = 'myProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'djangocourses',  # Replace with your actual MongoDB database name
+        'NAME': 'djangocourses',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
             'host': 'mongodb+srv://awaisamjad:N4VgJEMhoLvwcPld@cluster0.zmzyi.mongodb.net/',
@@ -95,6 +87,5 @@ USE_TZ = True
 # Static files settings for Vercel deployment
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
